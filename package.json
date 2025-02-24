@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/angelqtypie/it35-lab/",
+  "homepage": "https://angelqtypie.github.io/it35-lab/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
