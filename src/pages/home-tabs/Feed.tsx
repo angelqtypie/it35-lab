@@ -1,37 +1,37 @@
 import { 
-    IonButtons,
-      IonContent, 
+    IonCard,
+      IonCardContent, 
+      IonCardHeader, 
+      IonCardSubtitle, 
+      IonButtons,
+      IonMenuButton,
+      IonToolbar,
       IonHeader, 
-      IonMenuButton, 
       IonPage, 
-      IonTitle, 
-      IonToolbar 
+      IonCardTitle 
   } from '@ionic/react';
-  
-  const Feed: React.FC = () => {
-    return (
-      <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot='start'>
-              <IonMenuButton></IonMenuButton>
-            </IonButtons>
-            <IonTitle>Feed</IonTitle>
+ 
+      
+     function Feed() {
+        return (
+          <IonPage>
+ <IonHeader>
+              <IonToolbar>
+                      <IonButtons slot='start'>
+                        <IonMenuButton></IonMenuButton>
+                      </IonButtons>
+          <IonCard>
+            <IonCardHeader>
+              <IonCardTitle>Card Title</IonCardTitle>
+              <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            </IonCardHeader>
+            
+            <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+          </IonCard>
           </IonToolbar>
-        </IonHeader>
-        <IonContent fullscreen>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '100%',
-            }}
-          >
-            Feed
-          </div>
-        </IonContent>
-      </IonPage>
+          </IonHeader>
+        
+           </IonPage>
     );
   };
   

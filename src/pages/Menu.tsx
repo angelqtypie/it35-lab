@@ -51,6 +51,9 @@ import {
   
             <Route exact path="/it35-lab/app/home">
               <Redirect to="/it35-lab/app/home/feed" />
+              <Redirect to="/it35-lab/app/home/search" />
+              <Redirect to="/it35-lab/app/home/favorites" />
+
             </Route>
   
           </IonRouterOutlet>
