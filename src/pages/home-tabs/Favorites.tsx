@@ -4,11 +4,13 @@ import {
       IonHeader, 
       IonMenuButton, 
       IonPage, 
-      IonTitle, 
-      IonToolbar 
+       IonItem, 
+       IonLabel,
+       IonToolbar, 
+       IonList  
   } from '@ionic/react';
   
-  const Favorites: React.FC = () => {
+  function Favorites() {
     return (
       <IonPage>
         <IonHeader>
@@ -16,21 +18,29 @@ import {
             <IonButtons slot='start'>
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonTitle>Favorites</IonTitle>
+
           </IonToolbar>
         </IonHeader>
-        <IonContent fullscreen>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '100%',
-            }}
-          >
-            Favorites
-          </div>
-        </IonContent>
+  
+    <IonContent color="light">
+      <IonList inset={true}>
+        <IonItem>
+          <IonLabel>Pokémon Yellow</IonLabel>
+        </IonItem>
+        <IonItem>
+          <IonLabel>Mega Man X</IonLabel>
+        </IonItem>
+        <IonItem>
+          <IonLabel>The Legend of Zelda</IonLabel>
+        </IonItem>
+        <IonItem>
+          <IonLabel>Pac-Man</IonLabel>
+        </IonItem>
+        <IonItem>
+          <IonLabel>Super Mario World</IonLabel>
+        </IonItem>
+      </IonList>
+    </IonContent>
       </IonPage>
     );
   };
