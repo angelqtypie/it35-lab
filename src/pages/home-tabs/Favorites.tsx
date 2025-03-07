@@ -6,37 +6,43 @@ import {
   IonPage,   
   IonToolbar, 
   IonButton,
+  IonTitle,
   IonAlert
 } from '@ionic/react';
 
 function Favorites() {
-  const cards = [
-    { icon: 'https://i.postimg.cc/52D9DHJ1/amazedcappy.png' },
-    {  icon: 'https://i.postimg.cc/JnszFbD1/hungrycapy.png' },
-    { icon: 'https://i.postimg.cc/t4gdgM8D/inlovecapy.png' },
-    {  icon: 'https://i.postimg.cc/cCgHjfzR/madcappy.png' },
-    { icon: 'https://i.postimg.cc/2yDkHg4D/sleppycappy.png' },
-  ];
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
+
+                  <IonTitle style={{ textAlign: 'center' }}>Capybara Mood</IonTitle>
+
           <IonButtons slot='start'>
             <IonMenuButton></IonMenuButton>
           </IonButtons>
         </IonToolbar>
+        
       </IonHeader>
+      
 
-      <IonContent className="ion-padding" color="light">
-        {/* Caption above the button */}
-        <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>Click your favorite capybara</h2>
+      <IonContent className="ion-padding">
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'Flex-start',
+    alignItems: 'center',
+    height: '77.4vh', 
+    width: '100%',  
+    textAlign: 'center',
+    paddingTop: '30vh',
+    background:'#105796' 
+  }}>
+    <h2 style={{color: 'white'}}>Click your favorite capybara</h2>
+    <IonButton id="present-alert" color="light">Click Me</IonButton>
+  </div>
 
-        {/* Click Me Button */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <IonButton id="present-alert">Click Me</IonButton>
-        </div>
-
-        {/* Alert Box */}
         <IonAlert
           trigger="present-alert"
           header="Select your favorite capybara"
@@ -45,9 +51,13 @@ function Favorites() {
             { label: 'Capybara 1', type: 'radio', value: 'capybara1' },
             { label: 'Capybara 2', type: 'radio', value: 'capybara2' },
             { label: 'Capybara 3', type: 'radio', value: 'capybara3' },
+            { label: 'Capybara 4', type: 'radio', value: 'capybara4' },
+            { label: 'Capybara 5', type: 'radio', value: 'capybara5' },
           ]}
         />
-      </IonContent>
+
+      </IonContent >
+
     </IonPage>
   );
 }
