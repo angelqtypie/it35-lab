@@ -9,8 +9,9 @@ import {
   IonInput,
   IonItem,
   IonLabel,
-  useIonRouter,
-  IonAlert
+  IonAlert,  
+  IonToast,  
+  useIonRouter
 } from '@ionic/react';
 import './Login.css'; 
 
@@ -63,8 +64,13 @@ const Login: React.FC = () => {
           message={'Please enter both username and password.'}
           buttons={['OK']}
         />
-      </IonContent>
-    </IonPage>
+         <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round'>
+                  Don't have an account? Register here
+                </IonButton>
+
+              
+            </IonContent>
+        </IonPage>
   );
 };
 
