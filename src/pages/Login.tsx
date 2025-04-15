@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   IonButton,
   IonContent, 
@@ -10,8 +10,8 @@ import {
   IonItem,
   IonLabel,
   IonAlert,  
-  IonToast,  
-  useIonRouter
+  useIonRouter,
+  useIonViewWillEnter  // Import the hook
 } from '@ionic/react';
 import './Login.css'; 
 
@@ -21,13 +21,19 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [showAlert, setShowAlert] = useState(false);
 
+  // Clear form fields when the login page is loaded
+  useIonViewWillEnter(() => {
+    setUsername('');
+    setPassword('');
+  });
+
   const doLogin = () => {
     if (username === '' || password === '') {
       setShowAlert(true);
     } else {
       navigation.push('/it35-lab/app', 'forward', 'replace');
     }
-  }
+  };
 
   return (
     <IonPage>
@@ -42,7 +48,8 @@ const Login: React.FC = () => {
           <IonInput 
             value={username} 
             onIonChange={e => setUsername(e.detail.value!)} 
-            required 
+            required
+            autocomplete="off"
           />
         </IonItem>
         <IonItem>
@@ -51,7 +58,8 @@ const Login: React.FC = () => {
             type="password" 
             value={password} 
             onIonChange={e => setPassword(e.detail.value!)} 
-            required 
+            required
+            autocomplete="off"
           />
         </IonItem>
         <IonButton onClick={doLogin} expand="full" className="ion-margin-top">
@@ -64,13 +72,11 @@ const Login: React.FC = () => {
           message={'Please enter both username and password.'}
           buttons={['OK']}
         />
-         <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round'>
-                  Don't have an account? Register here
-                </IonButton>
-
-              
-            </IonContent>
-        </IonPage>
+        <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round'>
+          Don't have an account? Register here
+        </IonButton>
+      </IonContent>
+    </IonPage>
   );
 };
 

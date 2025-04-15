@@ -20,7 +20,7 @@ function Favorites() {
                   <IonTitle style={{ textAlign: 'center' }}>Capybara Mood</IonTitle>
 
           <IonButtons slot='start'>
-            <IonMenuButton></IonMenuButton>
+          <IonMenuButton />
           </IonButtons>
         </IonToolbar>
         

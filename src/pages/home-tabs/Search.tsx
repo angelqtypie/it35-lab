@@ -19,7 +19,7 @@ const Search: React.FC = () => {
         <IonTitle style={{ textAlign: 'center' }}>Capybara Mood</IonTitle>
         </IonToolbar>
           <IonButtons slot='start'>
-            <IonMenuButton />
+          <IonMenuButton />
           </IonButtons>
 
       </IonHeader>

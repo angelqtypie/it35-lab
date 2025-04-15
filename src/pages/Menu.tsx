@@ -28,7 +28,7 @@ const Menu: React.FC = () => {
 
   return (
       <IonPage>
-          <IonSplitPane contentId="main">
+          <IonSplitPane contentId="main" when="never">
               <IonMenu contentId="main">
                   <IonHeader>
                       <IonToolbar>

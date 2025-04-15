@@ -46,7 +46,7 @@ function Feed() {
                   <IonTitle style={{ textAlign: 'center' }}>Capybara Mood</IonTitle>
                  
           <IonButtons slot="start">
-            <IonMenuButton />
+          <IonMenuButton />
           </IonButtons>
           
         </IonToolbar>
