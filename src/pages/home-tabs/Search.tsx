@@ -5,8 +5,7 @@ import {
   IonMenuButton,
   IonPage,
   IonTitle,
-  IonToolbar,
-  IonSearchbar
+  IonToolbar
 } from '@ionic/react';
 import React from 'react';
 import SearchContainer from '../../components/SearchContainer';
@@ -15,21 +14,16 @@ const Search: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-        <IonTitle style={{ textAlign: 'center' }}>Capybara Mood</IonTitle>
-        </IonToolbar>
-          <IonButtons slot='start'>
-          <IonMenuButton />
+        <IonToolbar style={{ padding: '0' }}> {/* Remove any padding to reduce space */}
+          <IonButtons slot="start">
+            <IonMenuButton />
           </IonButtons>
-
+          <IonTitle style={{ textAlign: 'center', fontWeight: 'bold' }}>Capybara Mood</IonTitle>
+        </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen  >
-      <div 
-          style={{
-            background:'#105796',
-          }}
-        >
-        <SearchContainer /> 
+      <IonContent fullscreen>
+        <div style={{ background: '#105796' }}>
+          <SearchContainer />
         </div>
       </IonContent>
     </IonPage>

@@ -9,11 +9,12 @@ import {
   IonInput,
   IonItem,
   IonLabel,
+  IonAvatar,
   IonAlert,  
   useIonRouter,
   useIonViewWillEnter  // Import the hook
 } from '@ionic/react';
-import './Login.css'; 
+import { colorFill } from 'ionicons/icons';
 
 const Login: React.FC = () => {
   const navigation = useIonRouter();
@@ -37,44 +38,91 @@ const Login: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Login</IonTitle>
-        </IonToolbar>
+  <IonHeader>
+  <IonToolbar color="dark">
+  <div style={{ textAlign: 'center', padding: '10px 0' }}>
+    <IonTitle style={{ fontWeight: 'bold', fontSize: '22px', color: 'var(--ion-color-light)' }}>
+      Capybara Mood
+    </IonTitle>
+    <p style={{ margin: 0, fontSize: '14px', color: 'var(--ion-color-light-tint)' }}>
+      Track your moods with a chill capybara
+    </p>
+  </div>
+</IonToolbar>
+
+
       </IonHeader>
-      <IonContent className='ion-padding background-image' id="loginbackground">
-        <IonItem>
-          <IonLabel position="floating">Username</IonLabel>
-          <IonInput 
-            value={username} 
-            onIonChange={e => setUsername(e.detail.value!)} 
-            required
-            autocomplete="off"
-          />
-        </IonItem>
-        <IonItem>
-          <IonLabel position="floating">Password</IonLabel>
-          <IonInput 
-            type="password" 
-            value={password} 
-            onIonChange={e => setPassword(e.detail.value!)} 
-            required
-            autocomplete="off"
-          />
-        </IonItem>
-        <IonButton onClick={doLogin} expand="full" className="ion-margin-top">
-          Login
-        </IonButton>
-        <IonAlert
-          isOpen={showAlert}
-          onDidDismiss={() => setShowAlert(false)}
-          header={'Error'}
-          message={'Please enter both username and password.'}
-          buttons={['OK']}
-        />
-        <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round'>
-          Don't have an account? Register here
-        </IonButton>
+      <IonContent fullscreen scrollY={false}>
+        <div 
+          style={{
+            background:'#105796',
+            display: 'flex',
+            height:'91.3vh' ,
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center'
+          }}
+        >
+          {/* Centered Avatar */}
+          <IonAvatar style={{ width: '100px', height: '100px', marginBottom: '20px' }}>
+            <img alt="User Avatar" src="https://heucollege.edu.vn/upload/2025/02/avatar-capybara-cute-4.webp" />
+          </IonAvatar>
+          <IonItem 
+  lines="inset"
+  className="ion-margin-vertical"
+  color="light"
+  style={{ width: '300px', maxWidth: '90%', borderRadius: '10px' }}
+>
+  <IonLabel position="floating" color="primary">Username</IonLabel>
+  <IonInput 
+    value={username} 
+    onIonChange={e => setUsername(e.detail.value!)} 
+    required
+    autocomplete="off"
+    color="dark"
+  />
+</IonItem>
+
+<IonItem 
+  lines="inset"
+  className="ion-margin-bottom"
+  color="light"
+  style={{ width: '300px', maxWidth: '90%', borderRadius: '10px' }}
+>
+  <IonLabel position="floating" color="primary">Password</IonLabel>
+  <IonInput 
+    type="password" 
+    value={password} 
+    onIonChange={e => setPassword(e.detail.value!)} 
+    required
+    autocomplete="off"
+    color="dark"
+  />
+</IonItem>
+
+<IonButton 
+  onClick={doLogin} 
+  expand="block" 
+  color="primary"
+  className="ion-margin-bottom"
+  style={{ width: '300px', maxWidth: '90%', fontWeight: 'bold' }}
+>
+  Login
+</IonButton>
+
+<IonButton 
+  routerLink="/it35-lab/register" 
+  expand="block" 
+  fill="clear" 
+  shape="round"
+  color="light"
+  style={{ width: '300px', maxWidth: '90%', textDecoration: 'underline' }}
+>
+  Don't have an account? Register here
+</IonButton>
+
+        </div>
       </IonContent>
     </IonPage>
   );
