@@ -7,6 +7,8 @@ import {
       IonTitle, 
       IonToolbar 
   } from '@ionic/react';
+
+  import Menu from '../Menu';
   
   const Favorites: React.FC = () => {
     return (
@@ -14,7 +16,7 @@ import {
         <IonHeader>
           <IonToolbar>
             <IonButtons slot='start'>
-              <IonMenuButton></IonMenuButton>
+            <IonMenuButton />
             </IonButtons>
             <IonTitle>Favorites</IonTitle>
           </IonToolbar>

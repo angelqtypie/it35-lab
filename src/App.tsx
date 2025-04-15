@@ -26,6 +26,18 @@ import About from './pages/About';
 import Details from './pages/Details';
 
 setupIonicReact();
+const PrivateRoute = ({ component: Component, ...rest }: any) => (
+  <Route
+    {...rest}
+    render={(props) =>
+      localStorage.getItem('loggedIn') === 'true' ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="/it35-lab/" />
+      )
+    }
+  />
+);
 
 const App: React.FC = () => (
   <IonApp>
@@ -33,9 +45,10 @@ const App: React.FC = () => (
       <Menu />
       <IonRouterOutlet id="main-content">
         <Route exact path="/it35-lab/" component={Login} />
-        <Route path="/it35-lab/app/home" component={Home} />
-        <Route path="/it35-lab/app/about" component={About} />
-        <Route path="/it35-lab/app/details" component={Details} />
+        <PrivateRoute path="/it35-lab/app/home" component={Home} />
+<PrivateRoute path="/it35-lab/app/about" component={About} />
+<PrivateRoute path="/it35-lab/app/details" component={Details} />
+
         <Redirect exact from="/it35-lab/app" to="/it35-lab/app/home" />
       </IonRouterOutlet>
     </IonReactRouter>

@@ -1,21 +1,24 @@
-import { 
-  IonButton,
-  IonButtons,
-    IonContent, 
-    IonHeader, 
-    IonMenuButton, 
-    IonPage, 
-    IonTitle, 
-    IonToolbar, 
-    useIonRouter
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButton
 } from '@ionic/react';
+import { menuController } from '@ionic/core';
 
 const Login: React.FC = () => {
-  const navigation = useIonRouter();
+  const history = useHistory();
 
-  const doLogin = () => {
-      navigation.push('/it35-lab/app','forward','replace');
-  }
+  const handleLogin = () => {
+    localStorage.setItem('loggedIn', 'true');
+    menuController.enable(true); // Re-enable the menu after login
+    history.replace('/it35-lab/app/home');
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -23,10 +26,10 @@ const Login: React.FC = () => {
           <IonTitle>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className='ion-padding'>
-          <IonButton onClick={() => doLogin()} expand="full">
-              Login
-          </IonButton>
+      <IonContent className="ion-padding">
+        <IonButton expand="full" onClick={handleLogin}>
+          Login
+        </IonButton>
       </IonContent>
     </IonPage>
   );
