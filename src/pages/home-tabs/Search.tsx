@@ -18,17 +18,17 @@ const Search: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-           <div style={{ textAlign: 'center', padding: '10px 0' }}>
-             <IonTitle style={{ fontWeight: 'bold', fontSize: '22px', color: 'var(--ion-color-light)' }}>
-               Capybara Mood
-             </IonTitle>
-             <p style={{ margin: 0, fontSize: '14px', color: 'var(--ion-color-light-tint)' }}>
-               Search your moods with a chill capybara
-             </p>
-           </div> 
+         <div style={{ textAlign: 'center', padding: '10px 0' }}>
+                      <IonTitle style={{ fontWeight: 'bold', fontSize: '22px', color: 'var(--ion-color-light)' }}>
+                        Capybara Mood
+                      </IonTitle>
+                      <p style={{ margin: 0, fontSize: '14px', color: 'var(--ion-color-light-tint)' }}>
+                        Find your moods with a chill capybara
+                      </p>
+                    </div> 
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent fullscreen scrollY={false}>
         <div style={{ background: '#105796' }}>
           <SearchContainer />
         </div>
