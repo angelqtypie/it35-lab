@@ -1,11 +1,16 @@
-import { 
+import {
   IonButtons,
-    IonContent, 
-    IonHeader, 
-    IonMenuButton, 
-    IonPage, 
-    IonTitle, 
-    IonToolbar 
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardContent,
+  IonText
 } from '@ionic/react';
 import FeedContainer from '../../components/FeedContainer';
 
@@ -14,24 +19,27 @@ const Feed: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="dark">
-          <IonButtons slot='start'>
-            <IonMenuButton></IonMenuButton>
+          <IonButtons slot="start">
+            <IonMenuButton />
           </IonButtons>
-          <IonTitle>Feed</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen color="primary">
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
-          }}
-        >
-          Feed
+
+      <IonContent fullscreen color="light">
+        <div style={{ padding: '16px' }}>
+          <IonCard className="ion-activatable ripple-parent">
+            <IonCardHeader>
+              <IonCardTitle>Welcome to your feed</IonCardTitle>
+            </IonCardHeader>
+            <IonCardContent>
+              <IonText color="medium">
+                Here's where you’ll see your latest updates.
+              </IonText>
+            </IonCardContent>
+          </IonCard>
+
+          <FeedContainer />
         </div>
-        <FeedContainer />
       </IonContent>
     </IonPage>
   );
