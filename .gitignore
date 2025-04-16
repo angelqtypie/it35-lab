@@ -30,4 +30,9 @@ yarn-error.log*
 # Optional eslint cache
 .eslintcache
 
+src/utils/supabaseClient.ts
+
 .env
+
+
+
